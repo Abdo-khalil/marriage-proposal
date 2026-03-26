@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background: linear-gradient(to right, #ffcccc, #ffe6e6);
+      margin-top: 80px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 30px;
+      padding: 20px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background: #ff4d4d;
+      color: white;
+    }
+
+    #no {
+      background: #999;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1> ❤️❤️❤️ جوجو انتى لسه زعلانه مني ❤️❤️❤️</h1>
+
+<button id="yes" onclick="yesClick()"> ❤️ لا يا قلب جوجو ❤️</button>
+<button id="no" ontouchstart="moveButton()" onclick="moveButton()"> اه لسه زعلانه  😢</button>
+
+<script>
+let yesSize = 18;
+
+function moveButton() {
+  let btn = document.getElementById("no");
+
+  let x = Math.random() * (window.innerWidth - 100);
+  let y = Math.random() * (window.innerHeight - 100);
+
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+
+  // تكبير زرار Yes
+  yesSize += 5;
+  document.getElementById("yes").style.fontSize = yesSize + "px";
+
+  // اهتزاز الموبايل
+  if (navigator.vibrate) {
+    navigator.vibrate(100);
+  }
+}
+
+function yesClick() {
+  window.location.href = "love.html";
+}
+</script>
+
+</body>
+</html>
